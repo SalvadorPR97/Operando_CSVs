@@ -1,0 +1,18 @@
+discord con christian
+https://stackoverflow.com/questions/21193682/convert-a-string-key-to-int-in-a-dictionary
+https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value
+https://www.programiz.com/python-programming/methods/built-in/sorted
+https://www.freecodecamp.org/espanol/news/expresiones-lambda-en-python/
+https://ellibrodepython.com/python-testing
+https://docs.python.org/3/library/unittest.html
+https://www.youtube.com/watch?v=J0y2tjBz2Ao&ab_channel=Garajedeideas
+https://docs.pydantic.dev/
+https://stackoverflow.com/questions/62119138/how-to-do-a-post-redirect-get-prg-in-fastapi
+https://www.youtube.com/watch?v=POyYF2YPlOQ&ab_channel=NelsonCode
+https://www.youtube.com/watch?v=AS5xQNlH3rg&ab_channel=NelsonCode
+https://thispointer.com/python-how-to-create-a-zip-archive-from-multiple-files-or-directory/
+https://flask.palletsprojects.com/en/2.2.x/patterns/fileuploads/
+https://medevel.com/flask-tutorial-upload-csv-file-and-insert-rows-into-the-database/
+https://getbootstrap.com/
+https://blog.logrocket.com/build-deploy-flask-app-using-docker/
+https://docs.docker.com/engine/reference/commandline/push/
