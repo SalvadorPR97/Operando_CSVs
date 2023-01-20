@@ -1,96 +1,53 @@
-- [Qué vamos a valorar](#qué-vamos-a-valorar)
-- [Introducción](#introducción)
-  - [Casos de uso a cubrir](#casos-de-uso-a-cubrir)
-    - [Reporte 1](#reporte-1)
-    - [Reporte 2](#reporte-2)
-    - [Reporte 3](#reporte-3)
-- [Requisitos mínimos de la prueba](#requisitos-mínimos-de-la-prueba)
-- [Para nota](#para-nota)
-- [¿Cómo entregar la prueba?](#cómo-entregar-la-prueba)
+# Resume Maker
+## Onestic Backend Test
 
-# Qué vamos a valorar
+I developed a script that allows, having three csv files called "customers.csv", "products.csv" y "orders.csv" and with columns names predefined, get
+another three csv files with more information about our customers.
 
-Desde nuestro punto de vista no existen pruebas bien hechas o pruebas mal hechas. Nos interesa entender cómo piensas, cómo afrontas los problemas y cómo adquieres conocimientos. Si tienes cualquier duda estamos a tu disposición.
+We can find four executables:
 
-Vamos a valorar que la solución planteada esté bien documentada y que seamos capaces de ejecutar tu solución “sin pensar”.
+### Script:
+For it works, we need to have the three files in a subfolder called "csv" with the correct names ("customers.csv", "products.csv" y "orders.csv") or introduce
+by the terminar the absolute route where you can find the files. After executing it, you can find the new files in the same route where the "main.py" is.
 
-Vamos a valorar **mucho** cómo has llegado a la solución que nos propones. Documenta el proceso que has seguido y las urls de las páginas o libros que has utilizado.
 
-No establecemos qué lenguaje, herramienta o framework tienes que utilizar, elige el camino que prefieras y dinos por qué lo has elegido. En nuestro día a día, los lenguajes que usamos son Python, PHP y JS, para nosotros es más sencillo validar tu prueba en alguno de estos lenguajes.
+### Testing:
+We can find in the root route the files for testing different situations, we can check if the dictionaries are well built or if the result that we get in the
+final files are correct. We just have to execute by terminal the file "test.py" having the original csv files in the subfolder "csv".
 
-Si por tus conocimientos no eres capaz de realizar el 100% de la prueba, ¡no te frustres! Llega hasta el punto que seas capaz. Explica las decisiones que has tomado y los problemas que te has encontrado.
 
-# Introducción
+### Api:
+Actually, its function es similar to the script, but we can give the csv files by the url writing its name followed by "/" in the following order: "customers.csv", "products.csv" y "orders.csv" having the file in the same route than "main.py". (WIP) Still working to make the api works by remote.
 
-Trabajamos como backend developer en la empresa Papas ACME, S.A. El departamento financiero aún tiene la necesidad de a partir de la información que tiene de clientes, productos e informes poder generar una serie de reportes. Por desgracia, el departamento no está excesivamente digitalizado y continúan trabajando con XLS, tras negociar con ellos hemos conseguido que exporten sus datos a ficheros CSV.
 
-Esta es la estructura que hemos definido conjuntamente para cada una de las entidades.
+### Front:
+The app has been developed using Flask. With this app, you can upload easier your csv files, you need to upload them in the correct order that is specified in
+top of the input and click in the "download" button. If everything is okay with files, the download of a zip file with the new csv files will start.
+The app is dockerized so you can run it in another system, you can find it making pull to the next route: xalvix/resume-maker. 
+The command to execute the image is: docker run -p 5000:5000 xalvix/resume-maker
 
-| Fichero | customers.csv | products.csv | orders.csv |
-|---------|---------------|--------------|------------|
-| Que contiene | Información de clientes |Información de productos |Información de pedidos| 
-| Columnas del fichero: |-`id` ID numérico que identifica al cliente <br>- `firstname` Nombre<br>-`lastname` Apellidos |-`id` ID numérico que identifica el producto<br>-`name` Nombre del producto<br>-`cost` Precio del producto en euros|-`id` ID numérico que identifica el pedido<br>-`customer` ID del cliente que hizo el pedido<br>-`products` Listado de ID’s de productos que ha comprado un cliente en el pedido.
-|Fichero|[customers.csv](customers.csv)|[products.csv](products.csv)|[orders.csv](orders.csv)|
- 
-## Casos de uso a cubrir
 
-Nuestros compañeros del departamento, nos presentan tres casos de uso que generarán distintos reportes de información a partir de unos ficheros que se suben a la plataforma.
 
-### Reporte 1
+# Resume Maker
+## Prueba Onestic Backend
 
-El equipo de ventas quiere saber el total de cada pedido. Debe generar un fichero llamado “order_prices.csv” con las siguientes columnas: 
+Se ha desarrolado un script que permite, pasándole tres ficheros csv llamados "customers.csv", "products.csv" y "orders.csv" y con unas columnas predefinidas, obtener otros tres ficheros csv con datos que relacionan los ficheros entre sí.
 
-id: ID del pedido
+Tenemos 4 ejecutables:
 
-total: Total del pedido en euros
+### Script:
+Para que este funcione, tendremos que tener los ficheros en una subcarpeta llamada "csv" con los nombres adecuados("customers.csv", "products.csv" y "orders.csv")o bien, introducir en la terminal la ruta absoluta donde se encuentran los archivos. Tras la ejecución, los ficheros los encontraremos en la ruta donde tenemos el main.py.
 
-### Reporte 2
+### Testing:
+Podemos encontrar en el directorio raiz los ficheros de test con los que realizar distintas comprobaciones, desde ver si se cargan los ficheros correctamente hasta si los resultados son los esperados. Tendremos que ejecutar por terminal el fichero test.py teniendo los ficheros csv en una subcarpeta llamada "csv".
 
-El equipo de marketing quiere saber que clientes han comprado cada producto. Debe generar un fichero llamado “product_customers.csv” con las siguientes columnas: 
+### Api:
+Actualmente, su función es similar al script, pero los ficheros los pasaremos a url por su nombre seguidos de "/" en el orden: "customers.csv", "products.csv" y "orders.csv" teniéndolos en la misma ruta que el main.py. (Aún en desarrollo) Se está trabajando para que funcione de forma remota.
 
-id: ID del producto
+### Front:
+Se trata de una app desarrollada con Flask para más comodidad a la hora de aportar los archivos, solo tendrá que respetarse el orden que aparece especificado encima de cada input y hacer click en el boton de download. Si todo está bien con los archivos, empezará la descarga de un fichero zip con los tres ficheros csv resultantes. 
+La app está dockerizada para poder ejecutarla en cualquier sistema, la imagen la podemos encontrar haciendo pull al siguiente enlace: xalvix/resume-maker. 
+El comando para ejecutar la imagen sería: docker run -p 5000:5000 xalvix/resume-maker
 
-customer_ids: Lista de todos los ID’s que han comprado ese producto (Separados por un espacio)
 
-### Reporte 3
-
- Para evaluar a los clientes, necesitamos un fichero que contenga todos los pedidos ordenados descendentemente por el total en euros:
-
-Debe generar un fichero llamado “customer_ranking.csv" con las siguientes columnas: 
-
-id: ID del cliente
-
-name: Nombre del cliente
-
-lastname: Apellidos del cliente
-
-total: Total en euros que el cliente ha comprado en productos.
-
-Las columnas deben ir correctamente identificadas con el nombre de cada columna en la primera fila de los ficheros.
-
-# Requisitos mínimos de la prueba
-
-* Desarrolla una aplicación que utilizando como parámetros de entrada los tres ficheros suministrados customers.csv, products.csv y orders.csv genere los tres reportes solicitados.
-
-* No es necesario que construyas un frontend, es una prueba de backend. Es suficiente con tener un comando en consola que recoja la entrada y genere los archivos de salida.
-
-* Decíamos en el primer apartado de la prueba que vamos a valorar como documentes la prueba, puedes crear un fichero readme.md con los pasos que tenemos que dar para ejecutar tu prueba en local.
-
-# Para nota
-
-Además de los requisitos mínimos para la prueba, hemos definido una serie de requisitos adicionales para que puedas lucirte
-
-* **Testing.** No es imprescindible, pero si vienes con nosotros vas a tener que aprender a testear tu código, puede ser un buen momento para empezar.
-
-* **API.** Implementar la aplicación como un API que permita subir los ficheros, generar los resultados y descargarlos.
-
-* **Docker.** Nos gustaría que toda la prueba y sus dependencias se ejecutaran dentro de un contenedor y así nuestros compañeros de departamento solo necesitarán Docker en su día a día.
-
-* **Frontend.** Cómo decíamos no es un requisito, pero si te animas seguro que para nuestros compañeros es más sencillo utilizar la aplicación a través de un formulario web.
-
-# ¿Cómo entregar la prueba?
-
-Tendrás que publicar tu prueba en un repositorio público, github por ejemplo.
-
-Documenta en el repositorio el proceso que has seguido y las fuentes que has utilizado para documentarte, es decir, redacta una pequeña memoria explicando los pasos que has dado, los problemas que te has encontrado y cómo los has solventado.
 
