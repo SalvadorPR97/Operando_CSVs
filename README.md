@@ -31,18 +31,18 @@ The command to execute the image is: docker run -p 5000:5000 xalvix/resume-maker
 # Resume Maker
 ## Prueba Onestic Backend
 
-Se ha desarrolado un script que permite, pasándole tres ficheros csv llamados "customers.csv", "products.csv" y "orders.csv" y con unas columnas predefinidas, obtener otros tres ficheros csv con datos que relacionan los ficheros entre sí.
+Se ha desarrollado un script que permite, pasándole tres ficheros csv llamados "customers.csv", "products.csv" y "orders.csv" y con unas columnas predefinidas, obtener otros tres ficheros csv con datos que relacionan los ficheros entre sí.
 
 Tenemos 4 ejecutables:
 
 ### Script:
-Para que este funcione, tendremos que tener los ficheros en una subcarpeta llamada "csv" con los nombres adecuados("customers.csv", "products.csv" y "orders.csv")o bien, introducir en la terminal la ruta absoluta donde se encuentran los archivos. Tras la ejecución, los ficheros los encontraremos en la ruta donde tenemos el main.py.
+Para que este funcione, tendremos que tener los ficheros en una subcarpeta llamada "csv" con los nombres adecuados("customers.csv", "products.csv" y "orders.csv")o bien, introducir en la terminal la ruta absoluta donde se encuentran los archivos. Tras la ejecución, los ficheros los encontraremos en la ruta donde tenemos el "main.py".
 
 ### Testing:
-Podemos encontrar en el directorio raiz los ficheros de test con los que realizar distintas comprobaciones, desde ver si se cargan los ficheros correctamente hasta si los resultados son los esperados. Tendremos que ejecutar por terminal el fichero test.py teniendo los ficheros csv en una subcarpeta llamada "csv".
+Podemos encontrar en el directorio raiz los ficheros de test con los que realizar distintas comprobaciones, desde ver si se cargan los ficheros correctamente hasta si los resultados son los esperados. Tendremos que ejecutar por terminal el fichero "test.py" teniendo los ficheros csv en una subcarpeta llamada "csv".
 
 ### Api:
-Actualmente, su función es similar al script, pero los ficheros los pasaremos a url por su nombre seguidos de "/" en el orden: "customers.csv", "products.csv" y "orders.csv" teniéndolos en la misma ruta que el main.py. (Aún en desarrollo) Se está trabajando para que funcione de forma remota.
+Actualmente, su función es similar al script, pero los ficheros los pasaremos a url por su nombre seguidos de "/" en el orden: "customers.csv", "products.csv" y "orders.csv" teniéndolos en la misma ruta que el "main.py". (Aún en desarrollo) Se está trabajando para que funcione de forma remota.
 
 ### Front:
 Se trata de una app desarrollada con Flask para más comodidad a la hora de aportar los archivos, solo tendrá que respetarse el orden que aparece especificado encima de cada input y hacer click en el boton de download. Si todo está bien con los archivos, empezará la descarga de un fichero zip con los tres ficheros csv resultantes. 
